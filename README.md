@@ -1,11 +1,11 @@
 # Seminario de animación programática
 
 Este repositorio contiene material educativo relacionado con Manim, creado por un grupo de integrantes de Animathica con el objetivo de
-* entender algunos conceptos básicos de la programación orientada a objetos (clases, atributos, métodos, herencia, etc.) y los fundamentos de Manim en este contexto;
+* entender algunos conceptos básicos de la programación orientada a objetos (clases, atributos, métodos, subclases, herencia, etc.) y los fundamentos de Manim en este contexto;
 * conocer algunas herramientas de ManimCommunity útiles para nuestro trabajo;
 * aprender a modificar clases y métodos existentes de ManimCommunity para adecuarlos a nuestros fines;
 * crear nuestras propias clases y métodos para generar animaciones reutilizables;
-* generar recursos educativos para quienes quieran aprender a aprender con ManimCommunity, tanto dentro del grupo de Animathica como fuera de él;
+* generar recursos educativos para quienes quieran aprender ManimCommunity, tanto dentro del grupo de Animathica como fuera de él;
 * contribuir al desarrollo de ManimCommunity, tanto de la documentación como del software en sí.
 
 ## Temario
@@ -20,11 +20,11 @@ Este repositorio contiene material educativo relacionado con Manim, creado por u
 
 #### _Scenes, Mobjects y Cameras_
 
-4. Escenas de texto. (Clases `Scene`, `Text`, `Tex` y `Brace`)
-5. Escenas 2D. (Clases `VectorScene`, `Arrow`, `Polygon` y `LinearTransformationScene`)
-6. Escenas 3D. (Clases `ThreeDScene`, `Surface`, `Arrow3D` y `SpecialThreeDScene`)
-7. Ejes y campos vectoriales. (Clases `Axes` y `VectorField`)
-8. Cámaras móviles. (Clases `MovingCamera`, `MovingCameraScene`, `ThreeDCamera` y `ZoomedScene`)
+4. Escenas de texto. (Clases [`Scene`](https://docs.manim.community/en/stable/reference/manim.scene.scene.Scene.html#manim.scene.scene.Scene), [`Text`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.Text.html#manim.mobject.text.text_mobject.Text), [`Tex`](https://docs.manim.community/en/stable/reference/manim.mobject.text.tex_mobject.Tex.html#manim.mobject.text.tex_mobject.Tex) y [`Brace`](https://docs.manim.community/en/stable/reference/manim.mobject.svg.brace.Brace.html#manim.mobject.svg.brace.Brace))
+5. Escenas 2D. (Clases [`VectorScene`](https://docs.manim.community/en/stable/reference/manim.scene.vector_space_scene.VectorScene.html#manim.scene.vector_space_scene.VectorScene), [`Arrow`](https://docs.manim.community/en/stable/reference/manim.mobject.geometry.line.Arrow.html#manim.mobject.geometry.line.Arrow), [`Polygon`](https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Polygon.html#manim.mobject.geometry.polygram.Polygon) y [`LinearTransformationScene`](https://docs.manim.community/en/stable/reference/manim.scene.vector_space_scene.LinearTransformationScene.html#manim.scene.vector_space_scene.LinearTransformationScene))
+6. Escenas 3D. (Clases [`ThreeDScene`](https://docs.manim.community/en/stable/reference/manim.scene.three_d_scene.ThreeDScene.html#manim.scene.three_d_scene.ThreeDScene), [`Surface`](https://docs.manim.community/en/stable/reference/manim.mobject.three_d.three_dimensions.Surface.html#manim.mobject.three_d.three_dimensions.Surface), [`Arrow3D`](https://docs.manim.community/en/stable/reference/manim.mobject.three_d.three_dimensions.Arrow3D.html#manim.mobject.three_d.three_dimensions.Arrow3D) y [`SpecialThreeDScene`](https://docs.manim.community/en/stable/reference/manim.scene.three_d_scene.SpecialThreeDScene.html#manim.scene.three_d_scene.SpecialThreeDScene))
+7. Ejes y campos vectoriales. (Clases [`Axes`]() y [`VectorField`]())
+8. Cámaras móviles. (Clases [`MovingCamera`](https://docs.manim.community/en/stable/reference/manim.camera.moving_camera.MovingCamera.html#manim.camera.moving_camera.MovingCamera), [`MovingCameraScene`](https://docs.manim.community/en/stable/reference/manim.scene.moving_camera_scene.MovingCameraScene.html#manim.scene.moving_camera_scene.MovingCameraScene), [`ThreeDCamera`](https://docs.manim.community/en/stable/reference/manim.camera.three_d_camera.ThreeDCamera.html#manim.camera.three_d_camera.ThreeDCamera) y [`ZoomedScene`](https://docs.manim.community/en/stable/reference/manim.scene.zoomed_scene.ZoomedScene.html#manim.scene.zoomed_scene.ZoomedScene))
 
 #### _Animation_
 
@@ -49,6 +49,6 @@ Este repositorio contiene material educativo relacionado con Manim, creado por u
 * Si experimentamos o sabemos de la existencia de errores recurrentes, **exponerlos**, explicar por qué (creemos que) suceden y, de ser posible, mostrar cómo corregirlos.
 * Colocar hipervínculos en todas partes (siempre y cuando sean útiles).
 * Siempre que se utilicen _flags_ distintas de `-qm -v WARNING`, llamar la atención a esto y explicar el porqué, para así aprender las diferentes opciones disponibles de _rendering_.
-* Incluir al final de cada _notebook_ una sección con recursos adicionales para complementar la presentcaión; el último recurso adicional en todos los _notebooks_ debe ser el [Manual de referencia](https://docs.manim.community/en/stable/reference.html) de Manim.
+* Incluir al final de cada _notebook_ una sección con recursos adicionales para complementar la presentcaión; el último recurso adicional en todos los _notebooks_ debe ser el [manual de referencia](https://docs.manim.community/en/stable/reference.html) de Manim.
 
-**Nota** En las presentaciones se podrán mostrar ejemplos más complejos de lo que permite la "estructura constructiva" de los _notebooks_ del repositorio, pero estos no deben quedar en los _notebooks_.
+**Nota** Durante las presentaciones del seminario se podrán mostrar ejemplos más complejos de lo que permite la "estructura constructiva" de los _notebooks_ del repositorio, pero estos no deben quedar en los _notebooks_.
