@@ -1,0 +1,429 @@
+{
+ "cells": [
+  {
+   "attachments": {
+    "scene.png": {
+     "image/png": "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"
+    }
+   },
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4.0 Introducción a la clase Scene\n",
+    "\n",
+    "## Clase Scene\n",
+    "![scene.png](attachment:scene.png)\n",
+    "\n",
+    "En términos concretos la clase Scene, es la clase en la que los códigos de  las animaciones de Manim se basan, además que esta nos provee de todas las herramientas necesarias para la construcción de las animaciones.\n",
+    "En nuestra escena existirán varios elementos que todos se engloban en un solo grupo llamados Mobjects.\n",
+    "Un Mobject a grandes rasgos solo es un objeto mostrado en nuestra pantalla.\n",
+    "Todos los Mobjetcs pueden ser mostrados o desaparecidos gracias a los métodos que hay en la clase Scene que son: **Scene.add() y Scene.remove()** .\n",
+    "El método que nos permite animar es: **Scene.play()**.\n",
+    "Pero hay otro método que siempre se anula al escribir nuestro código que se llama **Scene.construct()**.\n",
+    "\n",
+    "\n",
+    "## Mobjects\n",
+    "Como ya lo mencionamos los mobjects son elementos que son animados para una escena y como podemos observar que pueden ser objetos matemáticos u objetos que sean solo textos y cada uno de estos tienen sus respectivos métodos, atributos para poder modificar sus características predeterminadas. \n",
+    "\n",
+    "### VMobjects\n",
+    "\n",
+    "Es un subclase de los Mobjects, solo que estos objetos son en su mayoría objetos matemáticos (vectores), pero también son de ayuda para crear objetos que no sean matemáticos como veremos el caso de los Text(No Latex) que provienen de los VMobjects\n",
+    "\n",
+    " ![Mobject](Mobject.png)\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### El método next_section\n",
+    "Como mencionamos ya anteriormente la clase Scene tiene una muchos métodos con los cuales es posible hacer toda la parte animada de nuestro código, pero este metodo permite separar las animaciones para renderizarlas por separado.\n",
+    "\n",
+    "\n",
+    "**next_section(name='unnamed', type=DefaultSectionType.NORMAL, skip_animations=False)**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class MyScene(Scene):\n",
+    "    def construct(self):\n",
+    "        self.play(Write(Text(\"Hello World!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def construct(self):\n",
+    "    # play the first animations...\n",
+    "    # you don't need a section in the very beginning as it gets created automatically\n",
+    "    self.next_section()\n",
+    "    # play more animations...\n",
+    "    self.next_section(\"this is an optional name that doesn't have to be unique\")\n",
+    "    # play even more animations...\n",
+    "    self.next_section(\"this is a section without any animations, it will be removed\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def construct(self):\n",
+    "    self.next_section()\n",
+    "    # this section doesn't have any animations and will be removed\n",
+    "    # but no error will be thrown\n",
+    "    # feel free to tend your flock of empty sections if you so desire\n",
+    "    self.add(Circle())\n",
+    "    self.next_section()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Text\n",
+    "Cuando queremos escribir textos en nuestras animaciones, tenemos dos formas de hacerlo que es con los Mobjects Text o con ayuda de Latex que más adelante diremos como ocupar esta opción\n",
+    "\n",
+    "Cuando ocupamos la opción Text, estamos ocupando las librerias de **Pango** \n",
+    "La ventaja de ocupar este opción es que esta totalmente dedicada a textos y no tanto a poner textos matematicos que es lo que nos ofrece Latex. Otra ventaja con Latex es que no es necesario meter otras librerias para querer escribir textos en otros idiomas, además del ingles.\n",
+    "Como en los siguientes ejemplos\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Example1Text(Scene):\n",
+    "    def construct(self):\n",
+    "        text = Text('Hello world').scale(3)\n",
+    "        self.add(text)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Color"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class TextColorExample(Scene):\n",
+    "    def construct(self):\n",
+    "        text1 = Text('Hello Mundo', color=BLUE).scale(3)\n",
+    "        text2 = Text('Hola world', gradient=(BLUE, GREEN)).scale(3).next_to(text1, DOWN)\n",
+    "        self.add(text1, text2) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Tipos de Letra, más colores y grosores de letra"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class TextItalicAndBoldExample(Scene):\n",
+    "    def construct(self):\n",
+    "        text1 = Text(\"Hello Luis\", slant=ITALIC)\n",
+    "        text2 = Text(\"Hello world\", t2s={'world':ITALIC})\n",
+    "        text3 = Text(\"Hello Juan\", weight=BOLD)\n",
+    "        text4 = Text(\"Hello world\", t2w={'world':BOLD})\n",
+    "        text5 = Text(\"Hello Diego\", t2c={'o':YELLOW}, disable_ligatures=True)\n",
+    "        text6 = Text(\n",
+    "            \"Visit us at docs.manim.community\",\n",
+    "            t2c={\"docs.manim.community\": YELLOW},\n",
+    "            disable_ligatures=True,\n",
+    "       )\n",
+    "        text6.scale(1.3).shift(DOWN)\n",
+    "        self.add(text1, text2, text3, text4, text5 , text6)\n",
+    "        Group(*self.mobjects).arrange(DOWN, buff=.8).set_height(config.frame_height-LARGE_BUFF)       "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Renderizado "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import* \n",
+    "\n",
+    "class TextRender(Scene):\n",
+    "    def construct(self):\n",
+    "        morning = Text(\"Hola Animathica\", font=\"sans-serif\")\n",
+    "        self.play(Write(morning))\n",
+    "        self.wait(2)       "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## MathTex y Tex \n",
+    "Estos dos comandos tienen la particularidad, de que los textos tanto matemáticos como los que no son ahora son renderizados y creados por Latex, eso quiere decir que toda la sintaxis que trabajamos en Latex, es válida para escribir lo que necesitemos dentro de ambos comandos \n",
+    "Tex(\"\") y MathTex(\"\") veamos unos ejemplos donde podamos ver cual es la caracteristica que tiene cada uno.\n",
+    "Además gracias a los comandos que tiene Latex, podemos ocupar un Tex cuando querramos escribir un texto matemático para nuestras animaciones y que no nos salte un error al compilar nuestro código\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Aquí podemos ver dos ejemplos de como se usa Tex y MathTex"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import*\n",
+    "\n",
+    "class Tex(Scene):\n",
+    "     def construct(self):\n",
+    "        t1 = Tex('Hola Andrea')\n",
+    "        self.add((t1)\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import*\n",
+    "\n",
+    "class Eq(Scene):\n",
+    "    def construct(self):\n",
+    "        t = MathTex(r\"\\int_a^b f'(x) dx = f(b)- f(a)\")\n",
+    "        t2 = MathTex(r\"a^2+b^2=c^2\")\n",
+    "        self.add(t)\n",
+    "        t2.next_to(t, DOWN)\n",
+    "        self.add(t2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Aquí veamos un ejemplo de lo que mencionamos de poder utilizar sin problema Tex sin tener un problema de compilación"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import* \n",
+    "\n",
+    "\n",
+    "class Diferencia(Scene):\n",
+    "    def construct(self):\n",
+    "        arrow0 = MathTex(r\"\\xrightarrow{x^6y^8}\", font_size=96)\n",
+    "        arrow1 = Tex(r\"$\\xrightarrow{x^6y^8}$\", font_size=96)\n",
+    "\n",
+    "        self.add(VGroup(arrow0, arrow1).arrange(DOWN))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Otro aspecto importante de los Tex, es que podemos usarlos como si tuvieramos una cadena de Python y ocupar de manera independiente cada elemento de esa cadena para darle color o agregarle alguna característica que queramos.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import *\n",
+    "\n",
+    "class Strings(Scene):\n",
+    "    def construct(self):\n",
+    "        tex = Tex('Hola', r'$\\bigstar$', r'\\LaTeX', font_size=144)\n",
+    "        tex.set_color_by_tex('igsta', BLUE)\n",
+    "        self.add(tex)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Cuando trabajamos con los MathTex,  muchas veces las ecuaciones se escriben sin estar alineadas, una forma como lo haríamos en Latex, sería con el ambiente {aligned}, pero muchas veces nos saltará un error al compilarlo para nuestras animaciones, así que las últimas versiones de ManimCE han incorporado una opción para alinear los textos y en especial las ecuaciones, que es agregando dentro del MathTex un **r''** como en el siguiente ejemplo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class LaTeXAlignEnvironment(Scene):\n",
+    "    def construct(self):\n",
+    "        tex = MathTex(r'f(x) &= 3 + 2 + 1\\\\ &= 5 + 1 \\\\ &= 6', font_size=96)\n",
+    "        self.add(tex)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Propiedades no menos importantes que tienen los MathTex y que facilitan el trabajo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import *\n",
+    "\n",
+    "class LaTeXSubstringColoring(Scene):\n",
+    "    def construct(self):\n",
+    "        equation = MathTex(\n",
+    "            r\"e^x = x^0 + x^1 + \\frac{1}{2} x^2 + \\frac{1}{6} x^3 + \\cdots + \\frac{1}{n!} x^n + \\cdots\",\n",
+    "            substrings_to_isolate=\"x\"\n",
+    "        )\n",
+    "        equation.set_color_by_tex(\"x\", YELLOW)\n",
+    "        self.add(equation)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import *\n",
+    "\n",
+    "class IndexLabelsMathTex(Scene):\n",
+    "    def construct(self):\n",
+    "        text = MathTex(r\"\\binom{2n}{n+2}\", font_size=96)\n",
+    "\n",
+    "        # index the first (and only) term of the MathTex mob\n",
+    "        self.add(index_labels(text[0]))\n",
+    "\n",
+    "        text[0][1:3].set_color(YELLOW)\n",
+    "        text[0][3:6].set_color(RED)\n",
+    "        self.add(text)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## SVGPathMobject\n",
+    "\n",
+    "![SVP](sjj.png)\n",
+    "Varios tipos de VMobject que se ocupa muy regularmente en los videos provienen de esta subfamilia de VMobject (SVGPathMobject) que en teoría en esta familia son todos aquellos VMobjects  que realizan un cierto camino o que se construyen a partir de realizar un camino.\n",
+    "![SS](ss.png)\n",
+    "### Brace\n",
+    "Un VMobject que se desprende es el Brace, que forma un corchete entre dos o más Mobjects \"englobandolos en un conjunto\"."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import *\n",
+    "\n",
+    "class BraceExample(Scene):\n",
+    "    def construct(self):\n",
+    "        s = Square()\n",
+    "        self.add(s)\n",
+    "        for i in np.linspace(0.1,1.0,4):\n",
+    "            br = Brace(s, sharpness=i)\n",
+    "            t = Text(f\"sharpness= {i}\").next_to(br, RIGHT)\n",
+    "            self.add(t)\n",
+    "            self.add(br)\n",
+    "        VGroup(*self.mobjects).arrange(DOWN, buff=0.2)\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "## BraceBetweenPoints\n",
+    "Por último un Mobject que se desprende del Mobject Brace, la diferencia entre ambos es que en vez de englobar dos Mobjects como lo hace el Brace; este lo que hace es englobarte a partir de dos puntos dados y además este BraceBetweenPoints puedes al igual que el Brace darle una dirección, ya que hereda casi todos los atributos que le puedes dar a Brace"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from manim import *\n",
+    "\n",
+    "class BraceBPExample(Scene):\n",
+    "    def construct(self):\n",
+    "        p1 = [0,0,0]\n",
+    "        p2 = [1,2,0]\n",
+    "        brace = BraceBetweenPoints(p1,p2)\n",
+    "        self.play(Create(NumberPlane()))\n",
+    "        self.play(Create(brace))\n",
+    "        self.wait(2)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
